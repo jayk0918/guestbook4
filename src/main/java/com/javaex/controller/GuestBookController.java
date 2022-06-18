@@ -57,7 +57,7 @@ public class GuestBookController {
 		String password = guestBookVo.getPassword();
 		no = guestBookVo.getNo();
 		
-		guestBookService.delete(password, no);
+		guestBookService.delete(password);
 		
 		return "redirect:/addList";
 	}

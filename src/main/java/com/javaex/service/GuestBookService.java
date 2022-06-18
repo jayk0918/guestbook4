@@ -26,8 +26,8 @@ public class GuestBookService {
 		return guestBookDao.getList(no);
 	}
 	
-	public int delete(String password, int no) {
-		return guestBookDao.delete(password, no);
+	public int delete(String password) {
+		return guestBookDao.delete(password);
 	}
 	
 	
