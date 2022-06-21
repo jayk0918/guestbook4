@@ -36,9 +36,9 @@ public class GuestBookDao {
 	}
 
 	// delete
-	public int delete(String password) {
+	public int delete(GuestBookVo guestBookVo) {
 		int count = -1;
-		count = sqlSession.delete("guestbook.delete", password);
+		count = sqlSession.delete("guestbook.delete", guestBookVo);
 		System.out.println(count + "건 삭제되었습니다.");
 		return count;
 	}

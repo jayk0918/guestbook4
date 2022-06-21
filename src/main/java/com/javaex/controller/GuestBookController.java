@@ -52,12 +52,11 @@ public class GuestBookController {
 	
 	
 	@RequestMapping(value = "/delete", method = {RequestMethod.GET, RequestMethod.POST})
-	public String delete(@ModelAttribute GuestBookVo guestBookVo, @RequestParam("no") int no) {
+	public String delete(@ModelAttribute GuestBookVo guestBookVo, @RequestParam("password") String password) {
 		System.out.println("GuestBookController>delete()");
-		String password = guestBookVo.getPassword();
-		no = guestBookVo.getNo();
-		
-		guestBookService.delete(password);
+		System.out.println(guestBookVo);
+		guestBookVo.setPassword(password);
+		guestBookService.delete(guestBookVo);
 		
 		return "redirect:/addList";
 	}
