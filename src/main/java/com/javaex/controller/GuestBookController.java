@@ -46,7 +46,7 @@ public class GuestBookController {
 		GuestBookVo guestBookVo = guestBookService.getList(no);
 		
 		model.addAttribute("guestBookVo", guestBookVo);
-		
+		System.out.println(guestBookVo);
 		return "deleteForm";
 	}
 	
